@@ -4,7 +4,7 @@ A bar with ploidies will be plotted on the right side of the heatmap.
 
 Dependencies: csv, argparse, cairosvg
 
-
+Usage:
 -o  output filename
 -c  node_unmerged_cnv_calls.bed file from the 10x pipeline
 -p  per_cell_summary_metrics.csv file from the 10x pipeline
