@@ -2,7 +2,8 @@
 <pre>
 A bar with ploidies will be plotted on the right side of the heatmap.
 
-Note: Current version uses the GRCH37 (hg19) genome. If a different species or genome build is desired, "chromosome_sizes" list can be adjusted in the skript.
+Note: Current version uses the GRCH37 (hg19) genome. If a different species or genome build is desired, 
+the "chromosome_sizes" list can be adjusted in the skript.
 
 Dependencies: csv, argparse, cairosvg
 
