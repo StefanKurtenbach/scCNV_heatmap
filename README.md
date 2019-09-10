@@ -13,7 +13,7 @@ Usage:
 -p  per_cell_summary_metrics.csv file from the 10x pipeline output
 
 Optional:
--e  Exclude noisy cells. Set to "True" if noisy cells marked by the 10x pipeline output should be excluded
+-e  Exclude noisy cells. Set to "True" to exclude noisy cells marked by the 10x pipeline
 
 <img src="https://raw.githubusercontent.com/StefanKurtenbach/scCNV_heatmap/master/heatmap.png" width = "300">
 
