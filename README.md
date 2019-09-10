@@ -1,4 +1,4 @@
-# scCNV_heatmap - plotting a ploidy sorted scCNV data from 10x Genomics runs
+# scCNV_heatmap - plotting a ploidy sorted heatmap from scCNV data (10x Genomics)
 <pre>
 A bar with ploidies will be plotted on the right side of the heatmap.
 
