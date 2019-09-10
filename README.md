@@ -8,12 +8,12 @@ the "chromosome_sizes" list can be adjusted in the skript.
 Dependencies: csv, argparse, cairosvg
 
 Usage:
--o  output filename
+-o  Output filename
 -c  node_unmerged_cnv_calls.bed file from the 10x pipeline output
 -p  per_cell_summary_metrics.csv file from the 10x pipeline output
 
 Optional:
--e  set to "True" if noisy cells marked by the 10x pipeline output should be excluded
+-e  Exclude noisy cells. Set to "True" if noisy cells marked by the 10x pipeline output should be excluded
 
 <img src="https://raw.githubusercontent.com/StefanKurtenbach/scCNV_heatmap/master/heatmap.png" width = "300">
 
