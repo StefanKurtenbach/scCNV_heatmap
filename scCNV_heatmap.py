@@ -1,5 +1,5 @@
 # scCNV_heatmap
-version = "1.1"
+version = "1.1.1"
 # Stefan Kurtenbach
 # Stefan.Kurtenbach@med.miami.edu
 # make upper and lower ploidies accessable from terminal
@@ -29,7 +29,7 @@ parser = argparse.ArgumentParser(description='CNV_args')
 parser.add_argument('-o','--output_filename', help='output name', required=False, type=str)
 parser.add_argument('-c','--cnv_call', help='node unmerged cnv call file', required=False, type=str)
 parser.add_argument('-p','--per_cell_summary_metrics', help='per cell summary metrics CNV file', required=False, type=str)
-parser.add_argument('-e','--exclude_noisy_cells', help='set to "True" if noisy cells should be excluded', required=False, type=bool, default=True)
+parser.add_argument('-e','--exclude_noisy_cells', help='set to "no" if noisy cells should be included', required=False, type=str, default="yes")
 args = vars(parser.parse_args())
 
 print("")
@@ -39,9 +39,10 @@ filename = args['output_filename']
 filename += ".svg"
 
 exclude_cells = args['exclude_noisy_cells']
-if exclude_cells == True:
+print(exclude_cells)
+if exclude_cells == "yes":
     print("Noisy cells will be excluded (default)")
-elif exclude_cells == False:
+elif exclude_cells == "no":
     print("Noisy cells will NOT be excluded")
 
 CNV_data = args['cnv_call']
@@ -52,12 +53,11 @@ with open(cell_summary_metrics_file) as csv_file:
     csv_reader = csv.reader(csv_file, delimiter=',')
     for x, row in enumerate(csv_reader):
         if x > 0:
-            if exclude_cells == True:
+            if exclude_cells == "yes":
                 if str(row[17]) == "0":
-                    if float(row[14]) >= 2.1 and float(row[14]) <= 2.8:
-                        cells.append([row[1], row[14]])
+                    cells.append([row[1], row[14]])
             else:
-                if float(row[14]) >= 2.1 and float(row[14]) <= 2.8:
+                if float(row[14]) > 1.1:
                     cells.append([row[1], row[14]])
 
 cells.sort(key=lambda x: x[1])
